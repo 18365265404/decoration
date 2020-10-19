@@ -1,0 +1,58 @@
+<!--首页的头部-->
+<div class="head-home layout">
+	<div class="head-home-left" >
+		<img src="../img/logo.png"/><a class="headCityV" href="cities.html">全国<span>∨</span></a>
+	</div>	
+	<div class="head-home-center"  style="width: 700px;">
+		<a href="index.html" id="home-active" style=" margin-left: 10px;">首页</a>
+		
+		<a href="hotel.html?key=1">找设计</a>
+		<a href="hotel.html?key=2">找装修</a>
+		<a href="hotel.html?key=3">找建材</a>
+		<a href="hotel.html?key=4">找软装</a>
+		<a style="border: none;" href="#" class="head-home-nav">保障服务<span class="triangle">▲</span><span class="triangle">▼</span>
+			<ul style="top: -20px; padding-top: 30px;">
+				<li onclick="(window.location.href='contactUs.html')">联系我们</li>
+				<li onclick="(window.location.href='aboutUs.html')">公司简介</li>
+			</ul>
+		</a>
+		<a style="display: none;" href="#">结婚商城</a>
+		<a style="display: none;" href="#">婚品采购</a>
+		
+	</div>	
+	<div class="head-seach" style="width: 300px; margin-left: -100px;">
+		<div class="head-home-right" style="width: 250px; display: flex;">
+			<select id="select1" style="width: 70px;height: 40px;line-height: 40px;border: none;outline: none; background: #f5f5f5;border-right: 1px solid #cccccc;">
+			  <option value="">找设计</option>
+			  <option value="2">找装修</option>
+			  <option value="3">找建材</option>
+			  <option value="4">找软装</option>
+			</select>
+			<input class="serachV1" type="" name="" id="" value=""  style="width: 130px;"/>
+		</div>
+		<div style="background: #1DAE63;" class="head-home-seach-btn" onclick="goSearch()">
+			<img src="../img/icon_seach.png"/>
+		</div>
+	</div>
+	
+</div>
+<script src="../allJs/packageJs/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	let localCityV=localStorage.getItem("city_name")
+	if(localCityV){
+		$(".headCityV").html(localCityV)
+	}else{
+		$(".headCityV").html('全国')
+	}
+	
+	
+	function goSearch(){
+	
+	let option1V=$('#select1 option:selected').val()
+	
+
+	window.location.href=encodeURI('searchHotel.html?id='+$(".serachV1").val()+"?key="+option1V);
+	
+}
+
+</script>

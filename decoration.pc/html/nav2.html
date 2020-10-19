@@ -1,0 +1,69 @@
+<div class="nav_content layout">
+	<div class="position">
+		<h1></h1>
+		<h2 class="headCityV">上海</h2>
+		<h3>
+			<span>[</span>
+			<span class="change-city" onclick="(window.location.href='cities.html')">
+				切换
+				<div class="city-all" style="display: none;">
+					<div class="city-all-a">
+						<a href="#">北京</a>
+						<a href="#">北京</a>
+						<a href="#">北京</a>
+						<a href="#">北京</a>
+						<a href="#">北京</a>
+						<a href="#">北京</a>
+						<a href="#">北京</a>
+						<a href="#">北京</a>
+					</div>
+				</div>
+			</span>
+			<span>]</span>
+		</h3>
+		
+	</div>
+	<a href="index.html">首页</a>
+	<a id="key1" href="hotel.html?key=1">找设计</a>
+	<a id="key2" href="hotel.html?key=2">找装修</a>
+	<a id="key3" href="hotel.html?key=3">找建材</a>
+	<a id="key4" href="hotel.html?key=4">找软装</a>
+	<a  href="http://backstage.jiudianhunyan.com" target="_blank">进入装修中心</a>
+
+</div>
+<script type="text/javascript">
+	let localCityV=localStorage.getItem("city_name")
+	if(localCityV){
+		$(".headCityV").html(localCityV)
+	}else{
+		$(".headCityV").html('全国')
+	}
+//	alert(localCityV)
+//	$(".headCityV").html(localCityV)
+
+var getHref = window.location.href;
+	let getKeys=getHref.split("?")[1].split("=")[1];
+	if(getKeys==1){
+		getKeys=""
+	}
+//	alert(getKeys)
+	switch (getKeys){
+		case "":
+			$("#key1").css("color","#1DAF63");
+			break;
+			
+
+		case "2":
+		
+			$("#key2").css("color","#1DAF63");
+			break;
+		case "3":
+			$("#key3").css("color","#1DAF63");
+			break;	
+		case "4":
+			$("#key4").css("color","#1DAF63");
+			break;	
+		default:
+			break;
+	}
+</script>
